@@ -1,0 +1,1 @@
+This repo is currently incomplete.   I am still trasnferring site-specific data to the database.   No templates have been added yet.   The site uses the Flask framework with a MySQL database and Bootstrap css/js frontend.
