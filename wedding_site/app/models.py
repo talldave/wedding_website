@@ -31,7 +31,7 @@ class Rsvp(db.Model):
     __tablename__ = 'RSVP'
 
     id = db.Column(db.Integer, primary_key = True)
-    guest_id = db.Column(db.Integer)
+    guest_id = db.Column(db.Integer, db.ForeignKey(Guest.id))
     response = db.Column(db.Integer)
     note = db.Column(db.String(4000))
     arrival_date = db.Column(db.String(24))
@@ -42,11 +42,12 @@ class Rsvp(db.Model):
     def __init__(self, guest_id, response, note, arrival_date, arrival_time, child_care, final ):
         self.guest_id = guest_id
         self.response = response
-	self.note = note
+        self.note = note
         self.arrival_date = arrival_date
         self.arrival_time = arrival_time
         self.child_care = child_care
         self.final = final
+
 
 class GuestRsvp(db.Model):
     __tablename__ = 'GUEST_RSVP_V'
@@ -79,7 +80,7 @@ class Venue(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String())
-    address_id = db.Column(db.Integer)
+    address_id = db.Column(db.Integer, db.ForeignKey(Address.id))
     type = db.Column(db.String())
     phone = db.Column(db.String())
 
@@ -94,7 +95,7 @@ class LoginTable(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     email_not_found = db.Column(db.String(64))
-    guest_id = db.Column(db.Integer)
+    guest_id = db.Column(db.Integer, db.ForeignKey(Guest.id))
     ip_addr = db.Column(db.String(16))
 
     def __init__(self, email_not_found, guest_id, ip_addr):
@@ -107,8 +108,8 @@ class Event_V(db.Model):
     __tablename__ = 'EVENT_V'
 
     id = db.Column(db.Integer, primary_key = True)
-    start_date = db.Column(db.String(24))
-    end_date = db.Column(db.String(24))
+    start_date = db.Column(db.DateTime)
+    end_date = db.Column(db.DateTime)
     #venue_id = db.Column(db.Integer)
     name = db.Column(db.String(128))
     description = db.Column(db.String(4096))
@@ -128,6 +129,7 @@ class Event_V(db.Model):
         self.name = name
         self.description = description
 
+
 class Web_Content(db.Model):
     __tablename__ = 'WEB_CONTENT'
 
@@ -136,4 +138,52 @@ class Web_Content(db.Model):
     section = db.Column(db.String(32))
     content = db.Column(db.String(4096))
     fkey = db.Column(db.Integer)
+
+
+class Address(db.Model):
+    __tablename__ = 'ADDRESS'
+
+    id = db.Column(db.Integer, primary_key = True)
+    street1 = db.Column(db.String(64))
+    city = db.Column(db.String(64))
+    state = db.Column(db.String(2))
+    zip = db.Column(db.String(10))
+    latitude = db.Column(db.Numeric(12,8))
+    longitude = db.Column(db.Numeric(12,8))
+    street2 = db.Column(db.String(64))
+    streetview_link = db.Column(db.String(256))
+
+
+class Vendor(db.Model):
+    __tablename__ = 'VENDOR'
+
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(64))
+    phone = db.Column(db.String(16))
+    web = db.Column(db.String(128))
+    type = db.Column(db.String(32))
+
+
+class Gift(db.Model):
+    __tablename__ = 'GIFT'
+
+    id = db.Column(db.Integer, primary_key = True)
+    gift = db.Column(db.String(64))
+    given_to = db.Column(db.String(128))
+    given_from = db.Column(db.String(128))
+    date_recd = db.Column(db.DateTime)
+    ty_date_sent = db.Column(db.DateTime)
+
+
+class Billing(db.Model):
+    __tablename__ = 'BILLING'
+
+    id = db.Column(db.Integer, primary_key = True)
+    amt_est = db.Column(db.Numeric(8,2))
+    amt_total = db.Column(db.Numeric(8,2))
+    amt_owe = db.Column(db.Numeric(8,2))
+    payee = db.Column(db.String(64))
+    payor = db.Column(db.String(64))
+    item = db.Column(db.String(128))
+
 
