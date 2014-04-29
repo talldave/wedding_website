@@ -10,12 +10,12 @@ class Guest(db.Model):
     __tablename__ = 'GUEST'
 
     id = db.Column(db.Integer, primary_key = True)
-    track_num = db.Column(db.String(7))
-    first_name = db.Column(db.String(32))
-    last_name = db.Column(db.String(32))
+    track_num = db.Column(db.String(7), nullable=False, unique=True)
+    first_name = db.Column(db.String(32), nullable=False)
+    last_name = db.Column(db.String(32), nullable=False)
     email_address = db.Column(db.String(64))
-    salutation = db.Column(db.String(64))
-    group = db.Column(db.String(64))
+    salutation = db.Column(db.String(64), nullable=False)
+    group = db.Column(db.String(64), nullable=False)
 
     def __init__(self, id, track_num, first_name, last_name, email_address, salutation, group):
         self.id = id
@@ -31,12 +31,12 @@ class Rsvp(db.Model):
     __tablename__ = 'RSVP'
 
     id = db.Column(db.Integer, primary_key = True)
-    guest_id = db.Column(db.Integer, db.ForeignKey(Guest.id))
-    response = db.Column(db.Integer)
+    guest_id = db.Column(db.Integer, db.ForeignKey(Guest.id), nullable=False)
+    response = db.Column(db.Integer, nullable=False, server_default=u"'-1'")
     note = db.Column(db.String(4000))
-    arrival_date = db.Column(db.String(24))
-    arrival_time = db.Column(db.String(24))
-    child_care = db.Column(db.Integer)
+    arrival_date = db.Column(db.String(24), nullable=False)
+    arrival_time = db.Column(db.String(24), nullable=False)
+    child_care = db.Column(db.Integer, nullable=False, server_default=u"'-1'")
     final = db.Column(db.Integer)
 
     def __init__(self, guest_id, response, note, arrival_date, arrival_time, child_care, final ):
@@ -79,9 +79,9 @@ class Venue(db.Model):
     __tablename__ = 'VENUE'
 
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String())
-    address_id = db.Column(db.Integer, db.ForeignKey(Address.id))
-    type = db.Column(db.String())
+    name = db.Column(db.String(), nullable=False)
+    address_id = db.Column(db.Integer, db.ForeignKey(Address.id), nullable=False)
+    type = db.Column(db.String(), nullable=False)
     phone = db.Column(db.String())
 
     def __init__(self, name, address_id, type, phone):
@@ -134,9 +134,9 @@ class Web_Content(db.Model):
     __tablename__ = 'WEB_CONTENT'
 
     id = db.Column(db.Integer, primary_key = True)
-    page = db.Column(db.String(32))
-    section = db.Column(db.String(32))
-    content = db.Column(db.String(4096))
+    page = db.Column(db.String(32), nullable=False)
+    section = db.Column(db.String(32), nullable=False)
+    content = db.Column(db.String(4096), nullable=False)
     fkey = db.Column(db.Integer)
 
 
@@ -144,10 +144,10 @@ class Address(db.Model):
     __tablename__ = 'ADDRESS'
 
     id = db.Column(db.Integer, primary_key = True)
-    street1 = db.Column(db.String(64))
-    city = db.Column(db.String(64))
-    state = db.Column(db.String(2))
-    zip = db.Column(db.String(10))
+    street1 = db.Column(db.String(64), nullable=False)
+    city = db.Column(db.String(64), nullable=False)
+    state = db.Column(db.String(2), nullable=False)
+    zip = db.Column(db.String(10), nullable=False)
     latitude = db.Column(db.Numeric(12,8))
     longitude = db.Column(db.Numeric(12,8))
     street2 = db.Column(db.String(64))
@@ -158,20 +158,20 @@ class Vendor(db.Model):
     __tablename__ = 'VENDOR'
 
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(64))
+    name = db.Column(db.String(64), nullable=False)
     phone = db.Column(db.String(16))
     web = db.Column(db.String(128))
-    type = db.Column(db.String(32))
+    type = db.Column(db.String(32), nullable=False)
 
 
 class Gift(db.Model):
     __tablename__ = 'GIFT'
 
     id = db.Column(db.Integer, primary_key = True)
-    gift = db.Column(db.String(64))
-    given_to = db.Column(db.String(128))
-    given_from = db.Column(db.String(128))
-    date_recd = db.Column(db.DateTime)
+    gift = db.Column(db.String(64), nullable=False)
+    given_to = db.Column(db.String(128), nullable=False)
+    given_from = db.Column(db.String(128), nullable=False)
+    date_recd = db.Column(db.DateTime, nullable=False)
     ty_date_sent = db.Column(db.DateTime)
 
 
@@ -180,10 +180,10 @@ class Billing(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     amt_est = db.Column(db.Numeric(8,2))
-    amt_total = db.Column(db.Numeric(8,2))
-    amt_owe = db.Column(db.Numeric(8,2))
-    payee = db.Column(db.String(64))
-    payor = db.Column(db.String(64))
-    item = db.Column(db.String(128))
+    amt_total = db.Column(db.Numeric(8,2), nullable=False)
+    amt_owe = db.Column(db.Numeric(8,2), nullable=False)
+    payee = db.Column(db.String(64), nullable=False)
+    payor = db.Column(db.String(64), nullable=False)
+    item = db.Column(db.String(128), nullable=False)
 
 
