@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% set active_page = "Local Info" %}
+{% block content %}
+ <section class="section-content section-map" id="section-map">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+<div id="map">
+<iframe width='100%' height='500px' frameBorder='5' src='http://a.tiles.mapbox.com/v3/talldave.hgo11oii/zoompan,zoomwheel,geocoder.html'></iframe> 
+</div>
+<div id="choices">
+<form name="dir">
+<select name="fromaddr">
+<option value="">Choose a starting location...</option>
+{% for venue in venues %}
+<option value="{{ venue.id }}">{{ venue.name }}</option>
+{% endfor %}
+</select>
+<select name="toaddr">
+<option value="">Choose a destination...</option>
+{% for venue in venues %}
+<option value="{{ venue.id }}">{{ venue.name }}</option>
+{% endfor %}
+</select>
+<input type="submit" value="Find Directions" name="submit"/>
+</form>
+</div>
+<div id="list">
+</div>
+	</div>
+      </div>
+     </div>
+  </section>
+{% endblock %}

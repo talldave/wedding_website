@@ -1,0 +1,94 @@
+{# TRAVEL / STAYING-HERE #}
+{% extends "base.html" %}
+{% set active_page = "Travel" %}
+{% block content %}
+
+
+  <!-- .................................... $Staying Here .................................... -->
+  <section class="section-content section-news" id="section-news">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+		<div class="row">
+			<div class="span4">
+			<h3> Staying Here </h3> </br>
+			</div>
+		</div>
+		   <div class="row">
+            <div class="span8 offset2">
+{{ staymain.content | safe }}
+			</div>
+          </div>
+          <hr>
+		<div class="row">
+            <div class="span4">
+              <h3>
+                Hotels
+              </h3>
+			  </br>
+            </div>
+          </div>
+{% for dunno in staytypes %}
+          <div class="row">
+            <div class="span4" align="center">
+              <h4> <a href="http://www.sheratonsonoma.com/" target="_blank">
+                Sheraton Sonoma County Hotel</a>
+              </h4>~$210/night<br/>
+            </div>
+            <div class="span8">
+              <p> {{ dunno.content }} </p>
+			</div>
+          </div>
+		</br>
+{% endfor %}
+			</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="span4">
+              <h3>
+                Comforts of Home
+              </h3>
+			  </br>
+            </div>
+            <div class="span8">
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4" align="center">
+              <h4><a href="https://www.airbnb.com/s/Petaluma--CA--United-States" target="_blank"> AirBnB </a></br>
+			  <a href="http://www.vrbo.com/vacation-rentals/usa/california/wine-country/sonoma-county/petaluma" target="_blank"> VRBO - Vacation Rental By Owner </a>
+              </h4>
+            </div>
+            <div class="span8">
+              <p>{# staytype.content #}</p>
+            </div>
+          </div>
+        </div>
+<!--
+		<div class="row">
+            <div class="span8 offset2">		
+		
+			<form action="#" method="post">
+			Enter your arrival/departure dates and number of guests, and we can do a quick search for you right here on the website!<br/>
+			Arrival
+			<input type="text" name="arr_date"/><br/>
+			Departure
+			<input type="text" name="dep_date"/>
+
+<select name="guest_count" style="width: 60px">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select>
+
+			<input type="submit" name="submit" value="Enter"/>
+			</form>
+			</div>
+		</div>
+-->
+		</div>
+    </div>
+  </section>
+
+{% endblock %}

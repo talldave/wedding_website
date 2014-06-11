@@ -1,0 +1,38 @@
+{# TRAVEL / GETTING-HERE #}
+{% extends "base.html" %}
+{% set active_page = "Travel" %}
+{% block content %}
+
+
+  <!-- .................................... $Getting Here .................................... -->
+  <section class="section-content section-news" id="section-news">
+    <div class="container">
+		<div class="row">
+			<div class="span4">
+			<h3> Getting Here </h3> </br>
+			</div>
+		</div>	
+      <div class="row">
+        <div class="span10 offset1">
+{% for mode in transtypes %}
+		<div class="row">
+            <div class="span2">
+              <h3>
+                {{ mode.section }}
+              </h3>
+			  </br>
+            </div>
+            <div class="span8">
+              <p> 
+{{ mode.content | safe }}
+			  </p>
+			</div>
+          </div>
+          <hr>
+{% endfor %}
+
+		</div>
+    </div>
+  </section>
+
+{% endblock %}

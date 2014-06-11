@@ -1,0 +1,49 @@
+Hi
+{% set i = 0 %}
+{% for r in rsvpr %}
+{% set i = i + 1 %}
+{% if i > 1 %}
+and
+{% endif %}
+{{ r.first_name -}}
+{% endfor -%}
+,
+<br/> <br/>
+&nbsp; &nbsp; &nbsp;
+Thank you for your RSVP! 
+<br/> <br/>
+&nbsp; &nbsp; &nbsp;
+Here is a record of your response.  Please contact us at <a href="mailto:david&carolyn@trikeorama.com">david&carolyn@trikeorama.com</a>, if you see any mistakes or have any questions. 
+<br/> <br/>
+Love,<br/>
+Carolyn and David
+<br/> <br/>
+<br/> <br/>
+RSVP For David and Carolyn's Wedding <br/>
+WHEN:  Sunday, May 25th, 2014 <br/>
+WHERE: Westerbeke Ranch -- Sonoma, CA <br/>
+Our wedding website - <a href="http://wedding.trikeorama.com/">http://wedding.trikeorama.com/</a> <br/>
+<hr/>
+  {% set arr = '' %}
+  {% set cc = '' %}
+  {% for r in rsvpr %}
+  {{ r.first_name }} {{ r.last_name }}:
+      {% if r.response == 1 %}
+        Yes
+      {% elif r.response == 0 %}
+        No
+      {% else %}
+        No response
+      {% endif %}
+	<br/>
+  {% endfor %}
+Arrival: {{ rsvp0.arrival_date }} {{ rsvp0.arrival_time }} <br/>
+Child care: 
+{% if rsvp0.child_care == 1 %}
+Yes
+{% elif rsvp0.child_care == 0 %}
+No
+{% else %}
+No response
+{% endif %}
+

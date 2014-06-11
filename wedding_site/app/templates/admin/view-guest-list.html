@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% set active_page = "Admin" %}
+{% block content %}
+ <section class="section-content section-news" id="section-news">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+Yes: {{ yes }} | No: {{ no }} | No Response: {{ noresp }} of 142<br/>
+<table border="1">
+<tr>
+<th style="width:160px">Name</th>
+<th>Response</th>
+<th>Child Care wanted</th>
+<th style="width:120px">Arrival</th>
+<th>Comment</th>
+</tr>
+{% set a=0 %}
+{% for guest in guests %}
+{% if guest.response!=1 %} {% set a=a+1 %} {% endif %}
+{% if a==1 %} <tr><td colspan="5" bgcolor="grey">&nbsp;</td></tr> {% endif %}
+<tr>
+<td>{{ guest.first_name }} {{ guest.last_name }}</td>
+<td>{% if guest.response==1 %}Yes!{% else %}no{% endif %}</td>
+<td>{% if guest.child_care==1 %}Yes!{% else %}no{% endif %}</td>
+<td>{{ guest.arrival_date }} {{ guest.arrival_time }}</td>
+<td>{{ guest.note }} </td>
+</tr>
+{% endfor %}
+
+</table>
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

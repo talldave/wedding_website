@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% set active_page = "Schedule" %}
+{% block content %}
+
+
+  <!-- .................................... $schedule .................................... -->
+  <section class="section-content section-news" id="section-news">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+		<div class="row">
+			<div class="span4">
+			<h3> Schedule </h3> </br>
+			</div>
+		</div>		
+		<div class="row">
+            <div class="span8 offset2">
+			Please see below for the main events of the weekend.  We have also 
+			compiled a great list of choose your own adventure activities that can be found on the 
+			<a href="{{ url_for('explore_sonoma') }}">Local Info/Explore Sonoma</a> page.  
+			If any of these turn into a more organized outing, we will move 
+			them over to this page.  Check back for updates.
+			</div>
+          </div>
+{% for event in events %}
+          <hr>
+		<div class="row">
+            <div class="span4">
+{% if event.start_date.strftime('%d') == '23' %}
+{% set suffix = 'rd' %}
+{% else %}
+{% set suffix = 'th' %}
+{% endif %}
+              <h3> {{ event.start_date.strftime('%A,  %B %d') }}{{ suffix }} </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4" align="center">
+              <h4> 
+{% set hr = event.start_date.strftime('%I').lstrip('0') %}
+{% set mn = event.start_date.strftime('%M') %}
+{% set pm = event.start_date.strftime('%p') %}
+{% set time = "%s:%s %s" % (hr,mn,pm) %}
+{% if event.start_date.strftime('%I:%M %p') == '12:00 AM' %}
+TBD
+{% else %}
+{{ time }}
+{# {{ event.start_date.strftime('%I:%M %p') }} #} 
+{% endif %}
+</h4>
+            </div>
+            <div class="span8">
+              <h4>{{ event.name }}</h4>
+              <p>{{ event.description }} </p>
+{% if event.venue_name == None %} 
+Location: TBD
+{% else %}
+	      <p><b>{{ event.venue_name }}</b></br>
+{{ event.addr_street1 }}</br>
+{{ event.addr_city }}, {{ event.addr_state }} {{ event.addr_zip }} </br>
+{{ event.venue_phone }}</br>
+<a href='/local-info/maps'>Map</a> / <a href='{{ event.streetview_link }}' target='_blank'>Street View</a>
+{% endif %}
+</p>
+			</div>
+          </div>
+{% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

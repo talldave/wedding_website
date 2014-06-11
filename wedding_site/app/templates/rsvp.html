@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% set active_page = "RSVP" %}
+{% block content %}
+ <section class="section-content" id="section-news">
+    <div class="container">
+      <div class="row">
+        <div class="span8 offset2">
+
+<form action="{{ url_for('rsvp') }}" method="post">
+<p><strong>Hi {{ session['salutation'] }}!</strong></p><br/>
+<p>Please let us know if you will be able to join us for our wedding on Sunday, May 25th.</p>
+<p>Feel free to visit other areas of the website and then return here by clicking the RSVP selection in the menu above.</p>
+<br/>
+{#
+{% for message in form.guest1.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest2.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest3.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest600.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest601.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest602.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest603.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest604.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest605.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest606.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest607.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest608.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest609.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest610.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest611.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest612.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest613.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest614.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest615.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest616.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest617.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest618.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest619.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest620.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest621.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest622.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest623.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest624.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest625.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest626.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest627.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest628.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest629.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest630.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest631.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest632.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest633.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest634.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest635.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest636.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest637.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest638.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest639.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest640.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest641.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest642.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest643.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest644.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest645.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest646.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest647.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest648.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest649.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest650.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest651.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest652.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest653.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest654.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest655.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest656.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest657.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest658.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest659.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest660.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest661.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest662.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest663.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest664.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest665.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest666.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest667.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest668.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest669.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest670.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest671.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest672.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest673.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest674.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest675.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest676.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest677.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest678.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest679.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest680.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest681.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest682.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest683.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest684.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest685.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest686.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest687.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest688.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest689.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest690.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest691.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest692.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest693.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest694.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest695.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest696.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest697.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest698.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest699.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest700.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest701.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest702.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest703.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest704.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest705.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest706.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest707.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest708.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest709.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest710.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest711.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest712.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest713.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest714.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest715.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest716.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest717.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest718.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest719.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest720.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest721.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest722.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest723.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest724.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest725.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest726.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest727.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest728.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest729.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest730.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest731.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest732.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest733.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest734.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest735.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest736.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest737.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest738.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest739.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest740.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest741.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest742.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest743.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest744.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest745.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest746.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest747.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest748.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest749.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest750.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest751.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest752.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest753.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest754.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest755.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest756.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest757.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest758.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+{% for message in form.guest759.errors %} <div class="flash" style="color:red"><strong>{{ message }}</strong></div><br/> {% endfor %}
+#}
+
+
+{{ form.hidden_tag() }}
+<table border="1" cellpadding="5">
+<tr>
+<th width="300">Guest</th>
+<th width="200">Accepts, with pleasure</th>
+<th width="200">Declines, with regrets</th></tr>
+{% for guest in guests %}
+  <tr><td align="center">
+    {{ guest.first_name }} {{ guest.last_name }}
+  </td>
+  <td align="center"><input type="radio" name="guest{{ guest.id }}" value="1"/></td>
+  <td align="center"><input type="radio" name="guest{{ guest.id }}" value="0"/></td>
+{#
+  {% for subfield in form.name1 %}
+    <td align="center">
+      {{ subfield }}
+    </td>
+  {% endfor %}
+#}
+  </tr>
+{% endfor %}
+</table>
+
+<br/>
+<div class="row">
+<div class="span3">
+When will you be arriving?
+</div>
+<div class="span5">
+{{ form.arrival_date }}
+{{ form.arrival_time }}
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="span5">
+Are you interested in Child Care during the wedding?
+</div>
+<div class="span3">
+<table><tr>
+{%- for subfield in form.child_care -%}
+<td width="75" align="center">
+{{- subfield -}}{{- subfield.label -}}
+</td>
+{%- endfor -%}
+</tr></table>
+</div>
+</div>
+{#
+&nbsp;&nbsp;
+<input type="radio" name="cc" value="yes"/>Yes 
+&nbsp;&nbsp;
+<input type="radio" name="cc" value="no"/>No
+#}
+<br/>
+<div class="row">
+<div class="span5">
+<p>Comments or questions?</p>
+{{ form.notebox(class="span5", rows="5") }}
+</div>
+<div class="span2 offset1" align="center">
+<br>
+{{ form.submit(class="btn btn-small btn-primary") }}
+<br/>
+<br/>
+Please RSVP by Friday, April 18th!
+</div>
+</div>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+{% endblock %}

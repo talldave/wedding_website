@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+{% set active_page = "Photos" %}
+{% block content %}
+
+  <!-- .................................... $breadcrumb .................................... -->
+  <section class="section-breadcrumb section-color-graylighter">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a><span class="divider">/</span></li>
+        <li class="active">Photos</li>
+      </ul>
+    </div>
+  </section>
+  <!-- .................................... $Portfolio .................................... -->
+  <section class="section-content section-portfolio" id="section-portfolio">
+    <div class="container">
+      <h2 class="section-title">
+        Photos
+        <small>Check back here for pictures from the wedding and other weekend events.</small>
+      </h2>
+      <div id="filters">
+        <ul class="nav nav-pills">
+          <li class="active">
+            <a data-filter="*" href="#">All</a>
+          </li>
+          <li>
+            <a data-filter=".filter-2" href="#">Wedding</a>
+          </li>
+          <li>
+            <a data-filter=".filter-3" href="#">Rehearsal Dinner</a>
+          </li>
+          <li>
+            <a data-filter=".filter-p" href="#">Activities</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="isotope hoverdir" id="container-isotope">
+          <div class="span3 isotope-item filter-p">
+            <figure class="hoverdir-item">
+              <img alt="" src="{{ url_for('static', filename='img/gallery/01rct-s.jpg') }}">
+              <!-- <img alt="" src="img/gallery/01rct-s.jpg"> -->
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="{{ url_for('static', filename='img/gallery/01rct-l.jpg') }}">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-p filter-2">
+            <figure class="hoverdir-item">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" 
+                      href="{{ url_for('static', filename='img/gallery/02rct-l.jpg') }}">
+              <img alt="" src="{{ url_for('static', filename='img/gallery/02rct-s.jpg') }}">
+</a>
+	 	</span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-p filter-3">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/03rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/03rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-2">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/04rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/04rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-p">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/05rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/05rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-2 filter-3">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/06rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/06rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-p">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/07rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/07rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-2">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/08rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/08rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-3">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/09rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/09rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-2">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/10rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/10rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-p">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/11rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/11rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="span3 isotope-item filter-2 filter-3">
+            <figure class="hoverdir-item">
+              <img alt="" src="img/gallery/12rct-s.jpg">
+              <div class="figcaption hoverdir-bg">
+                <div class="hoverdir-content">
+                  <span class="btn-wrap">
+                    <a class="btn btn-squared btn-inverse" href="portfolio-item.html">
+                      <i class="icon-external-link"></i>
+                    </a>
+                    <a class="btn btn-squared btn-inverse fancybox" data-fancybox-group="group" href="img/gallery/12rct-l.jpg">
+                      <i class="icon-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

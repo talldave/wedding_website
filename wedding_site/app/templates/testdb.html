@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set active_page = "D&C" %}
+{% block content %}
+<pre>
+GUEST
+ Your id is {{ guest.id }}
+ Hello {{ guest.salutation }}
+last name: {{ guest.last_name }}
+RSVP
+{{ rsvpr.guest_id }}
+{{ rsvpr.response }}
+final:{{ rsvpr.final }}<br\>
+{#
+#}
+Guest count
+num: {{ guest_count }}
+Works!
+</pre>
+{% endblock %}

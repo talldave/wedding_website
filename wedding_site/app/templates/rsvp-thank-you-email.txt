@@ -1,0 +1,48 @@
+Hi
+{% set i = 0 %}
+{% for r in rsvpr %}
+{% set i = i + 1 %}
+{% if i > 1 %}
+and
+{% endif %}
+{{ r.first_name -}}
+{% endfor -%}
+,
+
+    Thank you for your RSVP! 
+
+    Here is a record of your response.  Please contact us at david&carolyn@trikeorama.com, if you see any mistakes or have any questions. 
+
+Love,
+Carolyn and David
+
+
+
+RSVP For David and Carolyn's Wedding 
+WHEN:  Sunday, May 25th, 2014 
+WHERE: Westerbeke Ranch -- Sonoma, CA 
+Our wedding website - http://wedding.trikeorama.com/
+
+  {% set arr = '' %}
+  {% set cc = '' %}
+  {% for r in rsvpr %}
+{{ r.first_name }} {{ r.last_name }}: 
+      {% if r.response == 1 %}
+        Yes
+      {% elif r.response == 0 %}
+        No
+      {% else %}
+        No response
+      {% endif %}
+	<br/>
+  {% endfor %}
+Arrival: {{ rsvp0.arrival_date }} {{ rsvp0.arrival_time }} 
+Child care: 
+{% if rsvp0.child_care == 1 %}
+Yes
+{% elif rsvp0.child_care == 0 %}
+No
+{% else %}
+No response
+{% endif %}
+

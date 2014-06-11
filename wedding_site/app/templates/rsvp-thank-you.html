@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% set active_page = "RSVP" %}
+{% block content %}
+ <section class="section-content section-news" id="section-news">
+    <div class="container">
+      <div class="row">
+        <div class="span8 offset2">
+
+{#
+{% if x.yellow in orange %}
+hi
+{% endif %}
+#}
+Thank you for your RSVP! 
+<br/>
+<br/>
+You will also get an email record of your response.<br/>
+Questions?  Please contact us at <a href="mailto:david&carolyn@trikeorama.com">david&carolyn@trikeorama.com</a>
+
+<hr/>
+  {% for r in rsvpr %}
+  {{ r.first_name }} {{ r.last_name }}:
+      {% if r.response == 1 %}
+        Yes
+      {% elif r.response == 0 %}
+        No
+      {% else %}
+        No response
+      {% endif %}
+	<br/>
+  {% endfor %}
+Arrival: {{ rsvp0.arrival_date }} {{ rsvp0.arrival_time }} <br/>
+Child care: 
+{% if rsvp0.child_care == 1 %}
+Yes
+{% elif rsvp0.child_care == 0 %}
+No
+{% else %}
+No response
+{% endif %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
